@@ -1,4 +1,15 @@
 /* Reset styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin-left: 0;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+
 h1,
 h2,
 h3,
@@ -11,12 +22,6 @@ p {
 
 p:last-child {
   margin-bottom: 0;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 a {
@@ -32,4 +37,11 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
 }
