@@ -61,6 +61,18 @@ const handleSubmit = async event => {
     moreBtnEl.classList.remove('btn-is-hidden');
 
     totalPages = Math.ceil(total / per_page);
+
+    if (hits.length < per_page) {
+      moreBtnEl.classList.add('btn-is-hidden');
+      iziToast.show({
+        message: "We're sorry, but you've reached the end of search results.",
+        position: 'topRight',
+        timeout: 2000,
+        color: 'red',
+      });
+    } else {
+      moreBtnEl.classList.remove('btn-is-hidden');
+    }
     lightbox.refresh();
     // smoothScroll();
   } catch {
