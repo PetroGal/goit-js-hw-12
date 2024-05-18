@@ -72,6 +72,8 @@
   animation: rotation 1s linear infinite;
   z-index: 1000;
   position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
 
   .gallery & {
     position: fixed;

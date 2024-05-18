@@ -24,7 +24,7 @@ const handleSubmit = async event => {
 
   galleryEl.innerHTML = '';
   loaderEl.classList.remove('is-hidden');
-  moreBtnEl.classList.remove('btn-is-hidden');
+
   imageCurrentPage = 1;
 
   if (searchQuery === '') {
@@ -58,10 +58,11 @@ const handleSubmit = async event => {
     }
 
     galleryEl.insertAdjacentHTML('beforeend', createGalleryItemMarkup(hits));
+    moreBtnEl.classList.remove('btn-is-hidden');
 
     totalPages = Math.ceil(total / per_page);
     lightbox.refresh();
-    smoothScroll();
+    // smoothScroll();
   } catch {
     iziToast.show({
       message: 'An error occurred while fetching images',
@@ -81,7 +82,7 @@ const smoothScroll = () => {
   const scrollHeight = imageItemHeight * 2;
 
   window.scrollBy({
-    top: 716,
+    top: 730,
     left: 0,
     behavior: 'smooth',
   });
